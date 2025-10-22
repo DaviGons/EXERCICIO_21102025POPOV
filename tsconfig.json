@@ -1,22 +1,25 @@
 {
   "compilerOptions": {
-    /* Configurações de Diretório */
-    "rootDir": "./src",                                  /* Define o diretório raiz dos arquivos fonte. */
-    "outDir": "./dist",                                  /* Define o diretório de saída para os arquivos compilados (JavaScript). */
-
-    /* Configurações de Módulo e Target (Simples e moderno para Node) */
-    "target": "ES2022",                                  /* Especifica a versão alvo do JavaScript. Usamos uma versão moderna. */
-    "module": "CommonJS",                                /* Especifica o sistema de módulo a ser usado (padrão para Node.js). */
-    "esModuleInterop": true,                             /* Habilita a compatibilidade entre módulos CommonJS e ES (import/export). */
-    "forceConsistentCasingInFileNames": true,            /* Garante que o uso de maiúsculas/minúsculas nos nomes de arquivos é consistente. */
-
-    /* Verificações de Tipagem (Strictness) */
-    "strict": true,                                      /* Habilita todas as opções de verificação de tipo estrita (Ótimo para estudos). */
-    "skipLibCheck": true,                                /* Pula a verificação de tipo em arquivos de declaração (.d.ts) para acelerar a compilação. */
+    /* --- Configuração Principal --- */
+    "target": "ES2022", // Compila para uma versão moderna do JavaScript
+    "module": "CommonJS", // **IMPORTANTE**: Diz ao TS para usar 'require()' (como no seu código)
+    "lib": ["ES2022"], // **IMPORTANTE**: Remove as bibliotecas do Navegador (DOM)
     
-    /* Configurações Extras (Úteis para desenvolvimento) */
-    "sourceMap": true,                                   /* Gera arquivos .map para facilitar o debug do código original em TS. */
-    "resolveJsonModule": true                            /* Permite importar arquivos .json. */
+    /* --- Organização do Projeto --- */
+    "rootDir": "./src", // Diz ao TS que seu código .ts está na pasta 'src'
+    "outDir": "./dist", // Coloca os arquivos .js compilados na pasta 'dist' (para produção)
+    "sourceMap": true, // Ajuda a debugar mostrando o código .ts original nos erros
+
+    /* --- "Completinho" (Regras Estritas) --- */
+    "strict": true, // **IMPORTANTE**: Habilita TODAS as checagens estritas
+    "esModuleInterop": true, // Permite melhor compatibilidade entre 'require' e 'import'
+    "forceConsistentCasingInFileNames": true, // Evita bugs entre Windows e Linux/Mac
+    "moduleResolution": "node" // Como o TS acha os pacotes (padrão para Node)
   },
-  "include": ["src/**/*"]                                /* Inclui todos os arquivos dentro da pasta 'src'. */
+  "include": [
+    "src/**/*" // Diz ao TS para incluir TUDO que está dentro da pasta 'src'
+  ],
+  "exclude": [
+    "node_modules" // Ignora a pasta de pacotes
+  ]
 }

@@ -1,17 +1,35 @@
-version: "3.8"
+version: '3.8' # Especifica a versão do 'compose' para garantir compatibilidade
+
 services:
+  # Este é o nome do nosso serviço, vamos chamá-lo de 'db'
   db:
-    image: postgres:15-alpine
-    container_name: postgres_aluno
+    # Diz ao Docker para usar a imagem oficial do Postgres, versão 16
+    image: postgres:16
+    
+    # Dá um nome fixo ao container para podermos achá-lo fácil no Docker Desktop
+    container_name: escola-db
+    
+    # Força o container a sempre reiniciar se ele parar (ex: se o PC reiniciar)
     restart: always
+    
+    # Configura as "variáveis de ambiente" que o Postgres usa na primeira inicialização
     environment:
-      # Credenciais do PostgreSQL (devem ser as mesmas do .env)
-      POSTGRES_USER: aluno_user
-      POSTGRES_PASSWORD: senha_segura
-      POSTGRES_DB: notas_db
+      POSTGRES_USER: admin     # O nome de usuário que vamos usar
+      POSTGRES_PASSWORD: 123456  # A senha que vamos usar (só para estudo!)
+      POSTGRES_DB: escola      # O nome do banco de dados que ele vai criar
+    
+    # Mapeia a porta 5432 do "container" para a porta 5432 da "sua máquina"
+    # É assim que nosso script TS (na sua máquina) vai achar o banco (no container)
     ports:
-      - "5432:5432" # Porta de acesso local
+      - "5432:5432"
+    
+    # IMPORTANTE: Isso garante que os dados não sejam perdidos
+    # Ele mapeia uma pasta "local" (chamada 'pgdata') para a pasta de dados
+    # do Postgres dentro do container.
     volumes:
-      - postgres_data:/var/lib/postgresql/data # Persistir os dados
+      - pgdata:/var/lib/postgresql/data
+
+# Aqui nós definimos o "volume" que usamos acima
+# O Docker vai gerenciar essa pasta 'pgdata'
 volumes:
-  postgres_data:
+  pgdata:
