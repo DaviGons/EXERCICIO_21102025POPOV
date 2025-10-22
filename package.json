@@ -1,0 +1,44 @@
+{
+  "name": "exercicio_21102025popov",
+  "version": "1.0.0",
+  "description": "API simples de cadastro e média de notas de alunos (Node.js + TS + Docker + Postgres) para estudos.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start:db": "docker compose up -d db",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaviGons/EXERCICIO_21102025POPOV.git"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "express",
+    "postgresql",
+    "docker"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DaviGons/EXERCICIO_21102025POPOV/issues"
+  },
+  "homepage": "https://github.com/DaviGons/EXERCICIO_21102025POPOV#readme",
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.23",
+    "@types/node": "^20.19.23",
+    "@types/pg": "^8.15.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+  
+}

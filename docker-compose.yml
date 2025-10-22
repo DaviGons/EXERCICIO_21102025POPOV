@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_aluno
+    restart: always
+    environment:
+      # Credenciais do PostgreSQL (devem ser as mesmas do .env)
+      POSTGRES_USER: aluno_user
+      POSTGRES_PASSWORD: senha_segura
+      POSTGRES_DB: notas_db
+    ports:
+      - "5432:5432" # Porta de acesso local
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persistir os dados
+volumes:
+  postgres_data:

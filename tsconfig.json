@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    /* Configurações de Diretório */
+    "rootDir": "./src",                                  /* Define o diretório raiz dos arquivos fonte. */
+    "outDir": "./dist",                                  /* Define o diretório de saída para os arquivos compilados (JavaScript). */
+
+    /* Configurações de Módulo e Target (Simples e moderno para Node) */
+    "target": "ES2022",                                  /* Especifica a versão alvo do JavaScript. Usamos uma versão moderna. */
+    "module": "CommonJS",                                /* Especifica o sistema de módulo a ser usado (padrão para Node.js). */
+    "esModuleInterop": true,                             /* Habilita a compatibilidade entre módulos CommonJS e ES (import/export). */
+    "forceConsistentCasingInFileNames": true,            /* Garante que o uso de maiúsculas/minúsculas nos nomes de arquivos é consistente. */
+
+    /* Verificações de Tipagem (Strictness) */
+    "strict": true,                                      /* Habilita todas as opções de verificação de tipo estrita (Ótimo para estudos). */
+    "skipLibCheck": true,                                /* Pula a verificação de tipo em arquivos de declaração (.d.ts) para acelerar a compilação. */
+    
+    /* Configurações Extras (Úteis para desenvolvimento) */
+    "sourceMap": true,                                   /* Gera arquivos .map para facilitar o debug do código original em TS. */
+    "resolveJsonModule": true                            /* Permite importar arquivos .json. */
+  },
+  "include": ["src/**/*"]                                /* Inclui todos os arquivos dentro da pasta 'src'. */
+}
