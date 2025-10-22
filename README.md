@@ -1,7 +1,7 @@
 # Projeto de Laboratório: Cadastro de Alunos em TypeScript
 
 Este é um projeto simples de console (CLI) desenvolvido como um exercício de laboratório. O objetivo é capturar dados de alunos e suas notas, calcular as médias e persistir essas informações em um banco de dados PostgreSQL que roda em um container Docker.
-
+ALUNOS DAVI GONÇALVES SILVA (RA 2505783) e GUSTAVO ZAIA PASTRO (RA 2506964)
 ## Funcionalidades Principais
 
 * **Coleta de Dados:** Solicita interativamente o nome, idade e série do aluno.
